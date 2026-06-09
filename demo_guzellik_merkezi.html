@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O'Lâ Nail & Beauty — Nail & Lazer & Cilt Bakım Merkezi</title>
+<meta name="description" content="O'Lâ Nail & Beauty — Lazer epilasyon, cilt bakımı, bölgesel zayıflama, protez tırnak ve kalıcı makyaj hizmetleri.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF6F2;
+  --rose: #C4869A;
+  --rose-dark: #9A6070;
+  --rose-light: #EEDCE4;
+  --brown: #2E1A24;
+  --brown-mid: #6B4558;
+  --gold: #C49A5A;
+  --white: #FDFBFC;
+  --blush: #F5E8EE;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--brown); overflow-x:hidden; }
+
+/* NAV */
+nav {
+  position:fixed; top:0; width:100%; z-index:100;
+  padding:1rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(250,246,242,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(196,134,154,0.2);
+}
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:var(--brown); text-decoration:none; }
+.nav-logo span { color:var(--rose); font-style:italic; }
+.nav-right { display:flex; align-items:center; gap:.75rem; }
+.nav-ig {
+  display:flex; align-items:center; gap:.4rem;
+  font-size:.75rem; color:var(--rose-dark); text-decoration:none;
+  font-weight:500; letter-spacing:.03em;
+}
+.nav-cta {
+  background:var(--brown); color:var(--cream);
+  padding:.55rem 1.3rem; border-radius:50px;
+  font-size:.82rem; font-weight:500; text-decoration:none;
+  transition:background .2s;
+}
+.nav-cta:hover { background:var(--rose-dark); }
+
+/* HERO */
+.hero {
+  min-height:100svh;
+  display:flex; flex-direction:column;
+  padding-top:64px;
+}
+.hero-img {
+  width:100%; height:280px;
+  background:linear-gradient(135deg, #F2D5DF 0%, #DBA8BC 40%, #C4869A 100%);
+  position:relative; overflow:hidden; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-img-inner {
+  display:flex; gap:1.5rem; opacity:.22; font-size:6rem;
+}
+.hero-badge {
+  position:absolute; top:1.2rem; right:1.2rem;
+  width:76px; height:76px; border-radius:50%;
+  background:var(--brown); color:var(--cream);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; box-shadow:0 8px 24px rgba(46,26,36,.35);
+}
+.badge-num { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; line-height:1; }
+.badge-txt { font-size:.44rem; letter-spacing:.07em; text-transform:uppercase; opacity:.85; }
+
+/* Floating nail polish decoration */
+.hero-deco {
+  position:absolute; bottom:1rem; left:1.5rem;
+  display:flex; gap:.5rem;
+}
+.nail-dot {
+  width:12px; height:12px; border-radius:50%;
+  box-shadow:0 2px 6px rgba(46,26,36,.2);
+}
+
+.hero-content {
+  padding:2rem 1.5rem 2.5rem;
+  display:flex; flex-direction:column; gap:1.2rem;
+}
+.hero-tag {
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-size:.72rem; font-weight:500; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--rose-dark);
+}
+.hero-tag::before { content:''; width:24px; height:1px; background:var(--rose); }
+.hero-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.6rem; font-weight:300; line-height:1.1; color:var(--brown);
+}
+.hero-title em { font-style:italic; color:var(--rose-dark); }
+.hero-desc { font-size:.9rem; font-weight:300; line-height:1.75; color:var(--brown-mid); }
+.hero-btns { display:flex; gap:.75rem; flex-wrap:wrap; }
+.btn-primary {
+  background:var(--brown); color:var(--cream);
+  padding:.85rem 1.8rem; border-radius:50px;
+  font-size:.85rem; font-weight:500; text-decoration:none;
+  border:none; cursor:pointer; transition:background .2s;
+  display:inline-block; text-align:center;
+}
+.btn-primary:hover { background:var(--rose-dark); }
+.btn-outline {
+  border:1px solid var(--rose); color:var(--brown-mid);
+  padding:.85rem 1.8rem; border-radius:50px;
+  font-size:.85rem; font-weight:500; text-decoration:none;
+  background:transparent; cursor:pointer; transition:all .2s;
+  display:inline-block; text-align:center;
+}
+.btn-outline:hover { background:var(--rose-light); }
+
+/* YORUMLAR */
+.reviews-strip {
+  background:var(--white);
+  border-top:1px solid rgba(196,134,154,.2);
+  border-bottom:1px solid rgba(196,134,154,.2);
+  padding:1.5rem;
+  display:flex; flex-direction:column; gap:1rem;
+}
+.reviews-label {
+  font-size:.72rem; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--rose-dark);
+  display:flex; align-items:center; gap:.5rem;
+}
+.reviews-label::after { content:''; flex:1; height:1px; background:rgba(196,134,154,.3); }
+.reviews-scroll {
+  display:flex; gap:1rem; overflow-x:auto;
+  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  padding-bottom:.5rem;
+  scrollbar-width:none;
+}
+.reviews-scroll::-webkit-scrollbar { display:none; }
+.review-card {
+  flex-shrink:0; width:260px;
+  background:var(--cream); border-radius:16px;
+  padding:1.1rem 1.2rem; scroll-snap-align:start;
+  border:1px solid rgba(196,134,154,.25);
+}
+.review-stars { color:var(--gold); font-size:.95rem; margin-bottom:.4rem; }
+.review-text { font-size:.82rem; line-height:1.65; color:var(--brown); margin-bottom:.6rem; font-style:italic; }
+.review-author { display:flex; align-items:center; gap:.6rem; }
+.review-avatar {
+  width:32px; height:32px; border-radius:50%;
+  background:linear-gradient(135deg, var(--rose-light), var(--rose));
+  display:flex; align-items:center; justify-content:center;
+  font-size:.9rem; flex-shrink:0;
+}
+.review-name { font-size:.78rem; font-weight:500; color:var(--brown); }
+.review-date { font-size:.68rem; color:var(--brown-mid); }
+
+/* HERO STATS */
+.hero-stats {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:0; border-top:1px solid rgba(196,134,154,.25);
+}
+.stat-item {
+  padding:1.2rem .8rem; text-align:center;
+  border-right:1px solid rgba(196,134,154,.25);
+}
+.stat-item:last-child { border-right:none; }
+.stat-num { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--brown); display:block; }
+.stat-lbl { font-size:.68rem; color:var(--brown-mid); letter-spacing:.06em; }
+
+/* SECTION */
+.section { padding:3rem 1.5rem; }
+.section-tag {
+  font-size:.7rem; font-weight:600; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--rose-dark);
+  display:flex; align-items:center; gap:.5rem; margin-bottom:.75rem;
+}
+.section-tag::after { content:''; flex:1; height:1px; background:rgba(196,134,154,.4); max-width:50px; }
+.section-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem; font-weight:300; line-height:1.2; margin-bottom:.75rem;
+}
+.section-title em { font-style:italic; color:var(--rose-dark); }
+.section-sub { font-size:.86rem; color:var(--brown-mid); line-height:1.75; margin-bottom:2rem; }
+
+/* HİZMETLER */
+.services-grid { display:flex; flex-direction:column; gap:1rem; }
+.service-card {
+  background:var(--white); border-radius:16px;
+  padding:1.4rem 1.5rem;
+  border:1px solid rgba(196,134,154,.2);
+  display:flex; align-items:flex-start; gap:1rem;
+  transition:transform .2s, box-shadow .2s;
+}
+.service-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(196,134,154,.15); }
+.service-icon {
+  width:48px; height:48px; border-radius:12px;
+  background:var(--rose-light); display:flex; align-items:center;
+  justify-content:center; font-size:1.4rem; flex-shrink:0;
+}
+.service-body { flex:1; }
+.service-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; margin-bottom:.3rem; }
+.service-desc { font-size:.8rem; color:var(--brown-mid); line-height:1.65; margin-bottom:.4rem; }
+.service-price { font-size:.76rem; font-weight:500; color:var(--rose-dark); }
+
+/* HAKKIMIZDA */
+.about { background:var(--brown); color:var(--cream); padding:3rem 1.5rem; }
+.about-tag { color:var(--rose-light); letter-spacing:.15em; font-size:.7rem; text-transform:uppercase; margin-bottom:.75rem; }
+.about-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem; font-weight:300; line-height:1.2;
+  margin-bottom:1rem; color:var(--cream);
+}
+.about-title em { font-style:italic; color:var(--rose-light); }
+.about-text { font-size:.86rem; line-height:1.85; color:rgba(250,246,242,.72); margin-bottom:1.5rem; }
+.about-features { display:flex; flex-direction:column; gap:.7rem; margin-bottom:2rem; }
+.about-feat { display:flex; align-items:center; gap:.75rem; font-size:.83rem; color:rgba(250,246,242,.82); }
+.feat-dot { width:6px; height:6px; border-radius:50%; background:var(--rose); flex-shrink:0; }
+
+/* GALERİ */
+.gallery { background:var(--blush); }
+.gallery-scroll {
+  display:flex; gap:1rem; overflow-x:auto;
+  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  padding-bottom:.5rem; scrollbar-width:none;
+}
+.gallery-scroll::-webkit-scrollbar { display:none; }
+.gallery-item {
+  flex-shrink:0; width:200px; height:200px; border-radius:16px;
+  display:flex; align-items:flex-end;
+  padding:1rem; scroll-snap-align:start; position:relative; overflow:hidden;
+}
+.gallery-item span { font-size:.72rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.9); }
+.g1{background:linear-gradient(135deg,#E8B8C8,#C4869A)}
+.g2{background:linear-gradient(135deg,#F2D5DF,#D4A0B5)}
+.g3{background:linear-gradient(135deg,#C4869A,#9A6070)}
+.g4{background:linear-gradient(135deg,#DFC5D0,#BF9AAA)}
+.g5{background:linear-gradient(135deg,#E8C8D5,#C89AAA)}
+.g6{background:linear-gradient(135deg,#D4A0B5,#A87090)}
+
+/* FİYATLAR */
+.prices-stack { display:flex; flex-direction:column; gap:1rem; }
+.price-card {
+  background:var(--white); border-radius:20px; padding:1.8rem 1.5rem;
+  border:1px solid rgba(196,134,154,.2); position:relative;
+}
+.price-card.featured {
+  background:var(--brown); color:var(--cream);
+  border-color:var(--brown);
+  box-shadow:0 12px 40px rgba(46,26,36,.25);
+}
+.price-badge-top {
+  position:absolute; top:-12px; left:1.5rem;
+  background:var(--gold); color:var(--brown);
+  font-size:.62rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; padding:4px 14px; border-radius:20px;
+}
+.price-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; }
+.price-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; }
+.price-featured-name { color:var(--rose-light); }
+.price-amount { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--brown); line-height:1; }
+.price-card.featured .price-amount { color:var(--cream); }
+.price-period { font-size:.7rem; color:var(--brown-mid); }
+.price-card.featured .price-period { color:rgba(250,246,242,.55); }
+.price-features { list-style:none; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:.5rem; }
+.price-features li { font-size:.82rem; color:var(--brown-mid); display:flex; align-items:center; gap:.5rem; }
+.price-card.featured .price-features li { color:rgba(250,246,242,.75); }
+.price-features li::before { content:'✓'; color:var(--rose); font-weight:700; flex-shrink:0; }
+.price-card.featured .price-features li::before { color:var(--rose-light); }
+
+/* İLETİŞİM */
+.contact { background:var(--brown); padding:3rem 1.5rem; }
+.contact-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem; font-weight:300; color:var(--cream);
+  margin-bottom:.75rem; line-height:1.2;
+}
+.contact-title em { font-style:italic; color:var(--rose-light); }
+.contact-text { font-size:.86rem; color:rgba(250,246,242,.62); line-height:1.75; margin-bottom:2rem; }
+.contact-info { display:flex; flex-direction:column; gap:.9rem; margin-bottom:2.5rem; }
+.contact-item { display:flex; align-items:center; gap:.9rem; }
+.contact-icon {
+  width:42px; height:42px; border-radius:12px;
+  background:rgba(250,246,242,.08); display:flex;
+  align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;
+}
+.contact-item-text { font-size:.84rem; color:rgba(250,246,242,.8); }
+.contact-item-label { font-size:.66rem; color:rgba(250,246,242,.4); letter-spacing:.08em; text-transform:uppercase; margin-bottom:2px; }
+.contact-ig-link { color:rgba(250,246,242,.8); text-decoration:none; }
+.contact-ig-link:hover { color:var(--rose-light); }
+
+.contact-form { background:rgba(250,246,242,.06); border-radius:20px; padding:1.5rem; border:1px solid rgba(250,246,242,.1); }
+.form-group { display:flex; flex-direction:column; gap:.35rem; margin-bottom:.9rem; }
+.form-group label { font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(250,246,242,.45); }
+.form-group input, .form-group select, .form-group textarea {
+  background:rgba(250,246,242,.07); border:1px solid rgba(250,246,242,.12);
+  border-radius:10px; padding:.75rem 1rem;
+  font-family:'DM Sans',sans-serif; font-size:.86rem;
+  color:var(--cream); outline:none; transition:border-color .2s; width:100%;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color:rgba(250,246,242,.22); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--rose); }
+.form-group select option { background:var(--brown); }
+.form-group textarea { resize:none; height:80px; }
+.form-submit {
+  width:100%; background:var(--rose); color:var(--white);
+  border:none; border-radius:50px; padding:1rem;
+  font-family:'DM Sans',sans-serif; font-size:.88rem; font-weight:500;
+  cursor:pointer; transition:background .2s;
+}
+.form-submit:hover { background:var(--rose-dark); }
+
+/* FOOTER */
+footer {
+  background:#1C0E16; color:rgba(250,246,242,.45);
+  padding:1.5rem; text-align:center;
+  display:flex; flex-direction:column; gap:.4rem; font-size:.75rem;
+}
+.footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--cream); text-decoration:none; }
+.footer-logo span { font-style:italic; color:var(--rose-light); }
+
+/* WHATSAPP */
+.wa-btn {
+  position:fixed; bottom:1.5rem; right:1.5rem; z-index:999;
+  width:60px; height:60px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  font-size:1.6rem; text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  animation:waPulse 2.5s ease-in-out infinite;
+  cursor:pointer;
+}
+.wa-btn:hover { transform:scale(1.08); }
+@keyframes waPulse {
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}
+  50%{box-shadow:0 4px 35px rgba(37,211,102,.75), 0 0 0 8px rgba(37,211,102,.1)}
+}
+
+/* WhatsApp modal */
+.wa-modal-overlay {
+  position:fixed; inset:0; z-index:998;
+  background:rgba(46,26,36,.5); backdrop-filter:blur(4px);
+  display:none; align-items:flex-end; justify-content:center;
+  padding:1rem;
+}
+.wa-modal-overlay.open { display:flex; }
+.wa-modal {
+  background:#fff; border-radius:24px;
+  padding:1.75rem; width:100%; max-width:400px;
+  box-shadow:0 20px 60px rgba(46,26,36,.3);
+  animation:slideUp .3s ease;
+}
+@keyframes slideUp {
+  from{transform:translateY(40px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+.wa-modal-logo {
+  width:56px; height:56px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; margin-bottom:1rem;
+}
+.wa-modal-title { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:var(--brown); margin-bottom:.3rem; }
+.wa-modal-sub { font-size:.8rem; color:var(--brown-mid); margin-bottom:1.25rem; line-height:1.6; }
+.wa-modal-btn {
+  display:flex; align-items:center; justify-content:center; gap:.6rem;
+  width:100%; background:#25D366; color:#fff;
+  border:none; border-radius:50px; padding:.9rem;
+  font-family:'DM Sans',sans-serif; font-size:.92rem; font-weight:500;
+  cursor:not-allowed; opacity:.75; margin-bottom:.75rem;
+}
+.wa-modal-note {
+  text-align:center; font-size:.72rem; color:var(--brown-mid);
+  background:var(--cream); border-radius:10px; padding:.6rem 1rem;
+}
+.wa-modal-close {
+  position:absolute; top:1rem; right:1rem;
+  background:rgba(46,26,36,.08); border:none;
+  width:32px; height:32px; border-radius:50%;
+  font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.wa-modal { position:relative; }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* TABLET VE ÜSTÜ */
+@media(min-width:640px){
+  .hero { flex-direction:row; }
+  .hero-img { width:45%; height:auto; flex-shrink:0; }
+  .hero-content { padding:3rem 2.5rem; justify-content:center; }
+  .hero-title { font-size:3.2rem; }
+  .services-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .gallery-scroll { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; }
+  .gallery-item { width:auto; height:220px; }
+  .prices-stack { display:grid; grid-template-columns:repeat(3,1fr); }
+  .section { padding:4rem 3rem; }
+  .about { padding:4rem 3rem; }
+  .contact { padding:4rem 3rem; }
+  .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">O'Lâ <span>Nail & Beauty</span></a>
+  <div class="nav-right">
+    <a href="https://www.instagram.com/olanailandbeauty/" target="_blank" class="nav-ig">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+      @olanailandbeauty
+    </a>
+    <a href="#iletisim" class="nav-cta">Randevu Al</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <div class="hero-img-inner">💅🌸💋</div>
+    <div class="hero-badge">
+      <span class="badge-num">2K+</span>
+      <span class="badge-txt">Takipçi</span>
+    </div>
+    <div class="hero-deco">
+      <div class="nail-dot" style="background:#F2D5DF"></div>
+      <div class="nail-dot" style="background:#C4869A"></div>
+      <div class="nail-dot" style="background:#9A6070"></div>
+      <div class="nail-dot" style="background:#DFC5D0"></div>
+      <div class="nail-dot" style="background:#E8B8C8"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Nail & Lazer & Cilt Bakım</div>
+    <h1 class="hero-title">Her Detayda<br><em>Mükemmellik</em></h1>
+    <p class="hero-desc">Lazer epilasyon, medikal cilt bakımı, protez tırnak, bölgesel zayıflama ve kalıcı makyajda profesyonel hizmet.</p>
+    <div class="hero-btns">
+      <a href="#iletisim" class="btn-primary">Randevu Al</a>
+      <a href="#hizmetler" class="btn-outline">Hizmetlerimiz</a>
+    </div>
+  </div>
+</section>
+
+<!-- İSTATİSTİKLER -->
+<div class="hero-stats">
+  <div class="stat-item"><span class="stat-num">2.193</span><span class="stat-lbl">Instagram Takipçi</span></div>
+  <div class="stat-item"><span class="stat-num">326</span><span class="stat-lbl">Paylaşım</span></div>
+  <div class="stat-item"><span class="stat-num">5+</span><span class="stat-lbl">Hizmet Alanı</span></div>
+</div>
+
+<!-- MÜŞTERİ YORUMLARI -->
+<div class="reviews-strip">
+  <div class="reviews-label">Müşteri Yorumları</div>
+  <div class="reviews-scroll">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Protez tırnak için geldim, sonuçtan çok memnunum. Personel çok ilgili ve profesyonel."</div>
+      <div class="review-author">
+        <div class="review-avatar">👩</div>
+        <div><div class="review-name">Aylin K.</div><div class="review-date">2 hafta önce · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Lazer epilasyon için çok doğru adresi bulduk. Ellerinize sağlık, harika bir iş çıkardınız!"</div>
+      <div class="review-author">
+        <div class="review-avatar">👩‍🦱</div>
+        <div><div class="review-name">Selin M.</div><div class="review-date">1 ay önce · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Cilt bakımı sonrası cildimdeki fark inanılmaz. Kesinlikle tavsiye ederim!"</div>
+      <div class="review-author">
+        <div class="review-avatar">👩‍🦰</div>
+        <div><div class="review-name">Derya B.</div><div class="review-date">3 hafta önce · Google</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Kalıcı makyaj konusunda çok titiz çalışıyorlar. Fiyat-performans açısından en iyisi."</div>
+      <div class="review-author">
+        <div class="review-avatar">🧖‍♀️</div>
+        <div><div class="review-name">Fatma Ş.</div><div class="review-date">1 ay önce · Google</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HİZMETLER -->
+<section class="section" id="hizmetler">
+  <div class="reveal">
+    <div class="section-tag">Hizmetlerimiz</div>
+    <h2 class="section-title">Size Özel <em>Güzellik</em> Deneyimi</h2>
+    <p class="section-sub">Her müşterimize özel bakım protokolleri uyguluyoruz. Farkı ilk seanstan itibaren hissedeceksiniz.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">🪒</div>
+      <div class="service-body">
+        <div class="service-name">Lazer Epilasyon</div>
+        <div class="service-desc">Diode lazer cihazlarımızla ağrısız ve kalıcı sonuçlar. Tüm cilt tonlarına uygun profesyonel uygulama.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🫧</div>
+      <div class="service-body">
+        <div class="service-name">Cilt Bakımı</div>
+        <div class="service-desc">Akne, leke ve kırışıklık tedavisine özel protokollerle cildinizi yeniliyoruz. Medikal cilt bakımı.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📏</div>
+      <div class="service-body">
+        <div class="service-name">Bölgesel Zayıflama</div>
+        <div class="service-desc">Kavitasyon ve lenf drenajı ile hedefe yönelik yağ yakımı ve vücut şekillendirme uygulamaları.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💅🏻</div>
+      <div class="service-body">
+        <div class="service-name">Protez Tırnak</div>
+        <div class="service-desc">Jel, akril ve kalıcı oje uygulamalarıyla el ve ayaklarınıza özel tırnak tasarımı ve bakımı.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💋</div>
+      <div class="service-body">
+        <div class="service-name">Kalıcı Makyaj</div>
+        <div class="service-desc">Microblading, pudralama kaş ve eyeliner ile her sabah hazır bakın. Doğal ve uzun ömürlü sonuçlar.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <div class="service-body">
+        <div class="service-name">Kirpik & Kaş Tasarımı</div>
+        <div class="service-desc">İpek kirpik, kaş laminasyonu ve şekillendirme ile bakışlarınıza derinlik ve ifade katın.</div>
+        <div class="service-price">Fiyat için iletişime geçin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HAKKIMIZDA -->
+<section class="about" id="hakkimizda">
+  <div class="reveal">
+    <div class="about-tag">✦ Biz Kimiz</div>
+    <h2 class="about-title">O'Lâ <em>Nail & Beauty</em>,<br>Güzelliğin Adresi</h2>
+    <p class="about-text">O'Lâ Nail & Beauty olarak; lazer epilasyon, cilt bakımı, bölgesel zayıflama, protez tırnak ve kalıcı makyaj alanlarında uzman kadromuzla hizmet veriyoruz. Her müşterimize özel yaklaşım ve profesyonel uygulama ile güzelliğinizi en üst seviyeye taşıyoruz.</p>
+    <div class="about-features">
+      <div class="about-feat"><div class="feat-dot"></div>Sertifikalı ve deneyimli güzellik uzmanları</div>
+      <div class="about-feat"><div class="feat-dot"></div>Son teknoloji lazer ve cilt bakım cihazları</div>
+      <div class="about-feat"><div class="feat-dot"></div>Kişiye özel bakım protokolleri</div>
+      <div class="about-feat"><div class="feat-dot"></div>Steril ve hijyenik uygulama güvencesi</div>
+      <div class="about-feat"><div class="feat-dot"></div>Instagram'da 2.000+ mutlu müşteri</div>
+    </div>
+    <a href="#iletisim" class="btn-primary">Randevu Al →</a>
+  </div>
+</section>
+
+<!-- GALERİ -->
+<section class="section gallery" id="galeri">
+  <div class="reveal">
+    <div class="section-tag">Çalışmalarımız</div>
+    <h2 class="section-title">Öncesi & Sonrası <em>Farkı</em></h2>
+    <p class="section-sub" style="margin-bottom:1.5rem">Instagram'da 326 paylaşımla belgelenen gerçek sonuçlar.</p>
+  </div>
+  <div class="gallery-scroll reveal">
+    <div class="gallery-item g1"><span>Tırnak Tasarımı</span></div>
+    <div class="gallery-item g2"><span>Cilt Bakımı</span></div>
+    <div class="gallery-item g3"><span>Kalıcı Makyaj</span></div>
+    <div class="gallery-item g4"><span>Lazer</span></div>
+    <div class="gallery-item g5"><span>Kaş Tasarımı</span></div>
+    <div class="gallery-item g6"><span>Zayıflama</span></div>
+  </div>
+</section>
+
+<!-- FİYATLAR -->
+<section class="section" id="fiyatlar">
+  <div class="reveal">
+    <div class="section-tag">Paketler</div>
+    <h2 class="section-title">İhtiyacınıza Özel <em>Paketler</em></h2>
+    <p class="section-sub">Her bütçe ve ihtiyaca göre özel seçenekler sunuyoruz.</p>
+  </div>
+  <div class="prices-stack reveal">
+    <div class="price-card">
+      <div class="price-header">
+        <div><div class="price-name">Nail Studio</div><div class="price-period">tırnak hizmetleri</div></div>
+        <div><div class="price-amount" style="font-size:1.4rem;line-height:1.2">Fiyat<br>Al</div></div>
+      </div>
+      <ul class="price-features">
+        <li>Protez Tırnak (Jel / Akril)</li>
+        <li>Kalıcı Oje</li>
+        <li>Tırnak Bakımı & Tasarımı</li>
+        <li>Ücretsiz ön danışma</li>
+      </ul>
+      <a href="#iletisim" class="btn-outline" style="display:block;text-align:center">İletişime Geç</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge-top">En Çok Tercih</div>
+      <div class="price-header">
+        <div><div class="price-name price-featured-name">Komple Bakım</div><div class="price-period">tüm hizmetler paketi</div></div>
+        <div><div class="price-amount">Teklif<br><span style="font-size:.9rem">Al</span></div></div>
+      </div>
+      <ul class="price-features">
+        <li>Lazer Epilasyon</li>
+        <li>Medikal Cilt Bakımı</li>
+        <li>Protez Tırnak</li>
+        <li>Kaş & Kirpik Tasarımı</li>
+        <li>Bölgesel Zayıflama</li>
+      </ul>
+      <a href="#iletisim" class="btn-primary" style="display:block;text-align:center">Randevu Al</a>
+    </div>
+    <div class="price-card">
+      <div class="price-header">
+        <div><div class="price-name">Lazer & Cilt</div><div class="price-period">medikal hizmetler</div></div>
+        <div><div class="price-amount" style="font-size:1.4rem;line-height:1.2">Fiyat<br>Al</div></div>
+      </div>
+      <ul class="price-features">
+        <li>Lazer Epilasyon (tüm bölgeler)</li>
+        <li>Cilt Bakımı & Peeling</li>
+        <li>Bölgesel Zayıflama</li>
+        <li>Kalıcı Makyaj</li>
+      </ul>
+      <a href="#iletisim" class="btn-outline" style="display:block;text-align:center">İletişime Geç</a>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="contact" id="iletisim">
+  <div class="reveal">
+    <h2 class="contact-title">Randevunuzu<br><em>Hemen Alın</em></h2>
+    <p class="contact-text">Uzman ekibimiz sizin için burada. Ücretsiz danışma için hemen iletişime geçin.</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-item-label">Telefon</div><div class="contact-item-text">Telefon bilgisi için arayın</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div><div class="contact-item-label">Çalışma Saatleri</div><div class="contact-item-text">Pazartesi – Cumartesi: 09:00 – 20:00</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📸</div>
+        <div><div class="contact-item-label">Instagram</div><div class="contact-item-text"><a href="https://www.instagram.com/olanailandbeauty/" target="_blank" class="contact-ig-link">@olanailandbeauty</a></div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-text">WhatsApp butonuna tıklayın</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form reveal">
+    <div class="form-group">
+      <label>Adınız</label>
+      <input type="text" placeholder="Adınız Soyadınız" id="form-name">
+    </div>
+    <div class="form-group">
+      <label>Telefon</label>
+      <input type="tel" placeholder="05XX XXX XX XX" id="form-phone">
+    </div>
+    <div class="form-group">
+      <label>Hizmet Seçin</label>
+      <select id="form-service">
+        <option>Lazer Epilasyon 🪒</option>
+        <option>Cilt Bakımı 🫧</option>
+        <option>Bölgesel Zayıflama 📏</option>
+        <option>Protez Tırnak 💅🏻</option>
+        <option>Kalıcı Makyaj 💋</option>
+        <option>Kirpik & Kaş Tasarımı ✨</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Notunuz</label>
+      <textarea id="form-note" placeholder="Sormak istediğiniz bir şey var mı?"></textarea>
+    </div>
+    <button class="form-submit" id="form-submit-btn">Randevu Talebi Gönder ✦</button>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">O'Lâ <span>Nail & Beauty</span></a>
+  <span>© 2025 O'Lâ Nail & Beauty — Tüm hakları saklıdır.</span>
+  <span>
+    <a href="https://www.instagram.com/olanailandbeauty/" target="_blank" style="color:rgba(250,246,242,.45);text-decoration:none;">@olanailandbeauty</a>
+  </span>
+</footer>
+
+<!-- WHATSAPP BUTONU -->
+<a href="#" class="wa-btn" id="wa-open-btn" title="WhatsApp ile iletişime geç" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- WHATSAPP MODAL -->
+<div class="wa-modal-overlay" id="wa-modal-overlay">
+  <div class="wa-modal">
+    <button class="wa-modal-close" id="wa-modal-close" aria-label="Kapat">✕</button>
+    <div class="wa-modal-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+    <div class="wa-modal-title">O'Lâ Nail & Beauty</div>
+    <div class="wa-modal-sub">WhatsApp üzerinden hızlıca randevu alın veya hizmetlerimiz hakkında bilgi edinin.</div>
+    <button class="wa-modal-btn" disabled>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp'ta Yaz
+    </button>
+    <div class="wa-modal-note">⚙️ Demo sürümü — WhatsApp numarası henüz eklenmedi</div>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(r => observer.observe(r));
+
+// WhatsApp modal
+const waBtn = document.getElementById('wa-open-btn');
+const waOverlay = document.getElementById('wa-modal-overlay');
+const waClose = document.getElementById('wa-modal-close');
+
+waBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  waOverlay.classList.add('open');
+});
+waClose.addEventListener('click', () => {
+  waOverlay.classList.remove('open');
+});
+waOverlay.addEventListener('click', (e) => {
+  if (e.target === waOverlay) waOverlay.classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') waOverlay.classList.remove('open');
+});
+</script>
+</body>
+</html>

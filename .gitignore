@@ -1,0 +1,9 @@
+# Excel files containing customer lists
+musteri_listesi_temiz.xlsx
+~$musteri_listesi_temiz.xlsx
+*.xlsx
+*.xls
+
+# OS generated files
+.DS_Store
+Thumbs.db
